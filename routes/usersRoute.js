@@ -77,7 +77,8 @@ usersRoute.post("/login",async(req,res)=>{
                     res.send({msg:"Login Successful",email:user[0].email})
                 }
                 else{
-                     res.send({msg:`U have been blocked for ${user[0].lock} hours} `})
+                    let timeconvergen=user[0].lock/3600000
+                     res.send({msg:`U have been blocked for ${timeconvergen} hours} `})
                 }
         }
     }

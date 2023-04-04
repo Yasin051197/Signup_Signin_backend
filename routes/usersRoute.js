@@ -58,7 +58,7 @@ usersRoute.post("/login",async(req,res)=>{
                 else{
                     await User.findByIdAndUpdate(user[0]._id,{login_attempts:user[0].login_attempts+1})
             
-                      if(user[0].login_attempts>5){
+                      if(user[0].login_attempts>=4){
                            const tt=new Date()
                            const lt=tt.getTime()+1000*60*60*24;
                            console.log(lt)

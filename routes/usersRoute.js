@@ -77,7 +77,7 @@ usersRoute.post("/login",async(req,res)=>{
                     res.send({msg:"Login Successful",email:user[0].email})
                 }
                 else{
-                     res.send({msg:`U have been blocked for ${user[0].lock} miliseconds. `})
+                     res.send({msg:`U have been blocked for 24 hours. `})
                 }
         }
     }
